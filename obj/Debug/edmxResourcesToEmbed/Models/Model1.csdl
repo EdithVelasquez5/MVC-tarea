@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DonBoscoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="IdCarrera" />
+    </Key>
+    <Property Name="IdCarrera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Materias" Type="Int32" />
+    <Property Name="Ciclos" Type="Int32" />
+    <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="IdConsulta" />
+    </Key>
+    <Property Name="IdConsulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Ciudad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Consulta" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DonBoscoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" />
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" />
+  </EntityContainer>
+</Schema>

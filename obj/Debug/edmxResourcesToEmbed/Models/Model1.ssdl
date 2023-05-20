@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DonBoscoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Carrera">
+    <Key>
+      <PropertyRef Name="IdCarrera" />
+    </Key>
+    <Property Name="IdCarrera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="Materias" Type="int" />
+    <Property Name="Ciclos" Type="int" />
+    <Property Name="Imagen" Type="image" />
+  </EntityType>
+  <EntityType Name="Contacto">
+    <Key>
+      <PropertyRef Name="IdConsulta" />
+    </Key>
+    <Property Name="IdConsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+    <Property Name="Apellido" Type="varchar" MaxLength="30" />
+    <Property Name="Tipo" Type="varchar" MaxLength="30" />
+    <Property Name="Ciudad" Type="varchar" MaxLength="30" />
+    <Property Name="Usuario" Type="varchar" MaxLength="50" />
+    <Property Name="Consulta" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="DonBoscoModelStoreContainer">
+    <EntitySet Name="Carrera" EntityType="Self.Carrera" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
